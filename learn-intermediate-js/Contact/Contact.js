@@ -23,7 +23,10 @@ class Contact extends React.Component {
   render() {
     return (
       <div id="authorization">
-        <h1>Contact</h1>
+        {/*this changes the prompt based on whether or not the user has logged in*/}
+        {this.state.authorized ? 
+        <h1>Contact</h1> :
+        <h1>Enter the Password</h1>}
         <ul>
           <li>
             client@example.com
