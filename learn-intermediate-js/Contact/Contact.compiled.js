@@ -114,6 +114,27 @@
     }, {
       key: 'render',
       value: function render() {
+        var login = _react3.default.createElement(
+          'form',
+          { action: '#', onSubmit: this.authorize },
+          _react3.default.createElement('input', { type: 'password', placeholder: 'Password' }),
+          _react3.default.createElement('input', { type: 'submit' })
+        );
+        var contactInfo = _react3.default.createElement(
+          'ul',
+          null,
+          _react3.default.createElement(
+            'li',
+            null,
+            'client@example.com'
+          ),
+          _react3.default.createElement(
+            'li',
+            null,
+            '555.555.5555'
+          )
+        );
+  
         return _react3.default.createElement(
           'div',
           { id: 'authorization' },
@@ -126,20 +147,7 @@
             null,
             'Enter the Password'
           ),
-          _react3.default.createElement(
-            'ul',
-            null,
-            _react3.default.createElement(
-              'li',
-              null,
-              'client@example.com'
-            ),
-            _react3.default.createElement(
-              'li',
-              null,
-              '555.555.5555'
-            )
-          )
+          this.state.authorized ? contactInfo : login
         );
       }
     }]);
