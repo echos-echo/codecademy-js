@@ -21,13 +21,13 @@ class Contact extends React.Component {
   }
 
   render() {
-    return (
-      <div id="authorization">
-        {/*this changes the prompt based on whether or not the user has logged in*/}
-        {this.state.authorized ? 
-        <h1>Contact</h1> :
-        <h1>Enter the Password</h1>}
-        <ul>
+    const login = (
+      <form action="#">
+        <input type="password" placeholder="Password"/>
+        <input type="submit"/>
+      </form>);
+    const contactInfo = (
+      <ul>
           <li>
             client@example.com
           </li>
@@ -35,6 +35,16 @@ class Contact extends React.Component {
             555.555.5555
           </li>
         </ul>
+    );
+
+    return (
+      <div id="authorization">
+        {/*this changes the prompt based on whether or not the user has logged in*/}
+        {this.state.authorized ? 
+        <h1>Contact</h1> :
+        <h1>Enter the Password</h1>}
+        {this.state.authorized ?
+        contactInfo : login}
       </div>
     );
   }
